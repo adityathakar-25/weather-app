@@ -1,0 +1,209 @@
+<html>
+    <head>
+        <title>Welcome to Weather App</title>
+        <link rel="stylesheet" href="./css/weather.css">
+        <script src="./js/weather.js"></script>
+    </head>
+    <body>
+    <header>
+            <div class="navbar">
+                <div class="navbar__logo-container">
+                    <div class="navbar__logo">
+                        <p>Weather</p>
+                    </div>
+                </div>
+                <div class="navbar__search">
+                    <input type="textbox" class="navbar__search-input" placeholder="Search Any City" id="searchbutton">
+                    <div class="navbar__search-icon-box">
+                        <div>
+                            <button onclick="getValues()" class="navbar__search-icon"></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="navbar__city-info">
+                        <div class="navbar__weather-icon"></div>
+                    <div style="font-size: 20px;" id="nav-city-temp">
+                        </div>
+                </div>
+            </div>
+            <div style="width: 100%; display: flex; justify-content: center;">
+                <div class="popular-cities">
+                    <div class="popular-cities__list" id="popular-cities-list">
+                    </div>
+                </div>
+            </div>
+    </header>
+
+    <div class="main-content">
+
+        <div class="content-row">
+            <div class="current-weather">
+                <div class="current-weather__temp-wrapper">
+                    <p class="current-weather__temperature" id="main-temp"></p>
+                </div>
+                <div class="current-weather__details">
+                    <div><p style="font-size: 20px; margin-left: 0px; font-weight: 600;" id="condition"></p></div>
+                    <div style="margin-top: 10px; font-weight: 600;"><p style="font-size: 15px;" id="feels-like"></p></div>
+                </div>
+            </div>
+            <div class="forecast">
+                <p style="font-size: 20px; margin-left: 0px; font-weight: 600; color: white;">7 Days Forecast</p>
+                <div class="forecast__list">
+                        <div class="forecast__day">
+                            <div>Tonight</div>
+                            <div style="margin-top: 10px; font-size: 20px;" id="forecast-day-1"></div>
+                            <div class="forecast__icon"></div>
+                        </div>
+                        <div class="forecast__day">
+                            <div>Day2</div>
+                            <div style="margin-top: 10px; font-size: 20px;" id="forecast-day-2"></div>
+                            <div class="forecast__icon"></div>
+                        </div>
+                        <div class="forecast__day">
+                            <div>Day3</div>
+                            <div style="margin-top: 10px; font-size: 20px;" id="forecast-day-3"></div>
+                            <div class="forecast__icon"></div>
+                        </div>
+                        <div class="forecast__day">
+                            <div>Day4</div>
+                            <div style="margin-top: 10px; font-size: 20px;" id="forecast-day-4"></div>
+                            <div class="forecast__icon"></div>
+                        </div>
+                        <div class="forecast__day">
+                            <div>Day5</div>
+                            <div style="margin-top: 10px; font-size: 20px;" id="forecast-day-5"></div>
+                            <div class="forecast__icon"></div>
+                        </div>
+                        <div class="forecast__day">
+                            <div>Day6</div>
+                            <div style="margin-top: 10px; font-size: 20px;" id="forecast-day-6"></div>
+                            <div class="forecast__icon"></div>
+                        </div>
+                        <div class="forecast__day">
+                            <div>Day7</div>
+                            <div style="margin-top: 10px; font-size: 20px;" id="forecast-day-7"></div>
+                            <div class="forecast__icon"></div>
+                        </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-row">
+            <div class="weather-metrics">
+                <div class="weather-metrics__item">
+                    <div>Air Quality Index</div>
+                    <div style="margin-top: 10px; font-size: 20px;" id="aqi"></div>
+                </div>
+                <div class="weather-metrics__item">
+                    <div>Wind</div>
+                    <div style="margin-top: 10px; font-size: 20px;" id="wind"></div>
+                </div>
+                <div class="weather-metrics__item">
+                    <div>Humidity</div>
+                    <div style="margin-top: 10px; font-size: 20px;" id="humidity"></div>
+                </div>
+                <div class="weather-metrics__item">
+                    <div>Visibility</div>
+                    <div style="margin-top: 10px; font-size: 20px;" id="visibility"></div>
+                </div>
+                <div class="weather-metrics__item">
+                    <div>Pressure</div>
+                    <div style="margin-top: 10px; font-size: 20px;" id="pressure"></div>
+                </div>
+                <div class="weather-metrics__item">
+                    <div>Dew Point</div>
+                    <div style="margin-top: 10px; font-size: 20px;" id="dew-point"></div>
+                </div>
+                <div class="weather-metrics__item">
+                    <div>Sunrise</div>
+                    <div style="margin-top: 10px; font-size: 20px;" id="sunrise"></div>
+                </div>
+                <div class="weather-metrics__item">
+                    <div>Sunset</div>
+                    <div style="margin-top: 10px; font-size: 20px;" id="sunset"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content-row">
+            <div class="suggestions">
+                <p style="font-size: 30px;  font-weight: 700;">Suggestions for Tomorrow</p>
+                <div class="suggestions__list">
+                    <div class="suggestions__item">
+                        <div>Umbrella</div>
+                        <div>No need</div>
+                    </div>
+                    <div class="suggestions__item">
+                        <div>Outdoors</div>
+                        <div>Very Poor</div>
+                    </div>
+                    <div class="suggestions__item">
+                        <div>Clothing</div>
+                        <div>Shorts</div>
+                    </div>
+                    <div class="suggestions__item">
+                        <div>Heat Stroke</div>
+                        <div>Extreme</div>
+                    </div>
+                    <div class="suggestions__item">
+                        <div>UV Index</div>
+                        <div>Low</div>
+                    </div>
+                    <div class="suggestions__item">
+                        <div>Wind Chill</div>
+                        <div>Safe</div>
+                    </div>
+                </div>
+            </div>
+            <div class="today-summary">
+                <p>Weather Today</p>
+                <div class="today-summary__list">
+                    <div class="today-summary__group">
+                        <div>Temperature</div>
+                        <div>High : 35°</div>
+                        <div>Low : 26°</div>
+                        <div>Average High : 30°</div>
+                        <div>Average Low : 28°</div>
+                    </div>
+                    <div class="today-summary__group">
+                        <div>Wind Speed</div>
+                        <div>High : 14 km/h</div>
+                        <div>Low : 6 km/h</div>
+                        <div>Average High : 13 km/h</div>
+                        <div>Average Low : 8km/h</div>
+                    </div>
+                    <div class="today-summary__group">
+                        <div>Humidity</div>
+                        <div>High : 29.46%</div>
+                        <div>Low : 21.01%</div>
+                        <div>Average High : 26%</div>
+                        <div>Average Low : 22.45%</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-row">
+            <iframe id="city-map" src=""></iframe>        
+            <div class="monthly-planner">
+                <div class="mp-title">
+                    <p style="font-size: 30px;  font-weight: 600; text-align: center; color: black;">Monthly Planner</p>
+                </div>
+                <div class="monthly-planner__content">
+                    <div class="monthly-planner__month">
+                        APRIL
+                    </div>
+                    <div class="monthly-planner__data" id="monthly-planner">
+                    </div>
+                </div>
+            </div>
+            <div class="feedback-form">
+                <p style="font-size: 25px;  font-weight: 700;">Feedback</p>
+                <input type="textarea" id="myTextbox" class="feedback-form__textarea" placeholder="Write Your Feedback Here...">
+                <button onclick="getValue()" class="feedback-form__submit">Submit</button>
+            </div>
+        </div>
+
+    </div>
+    </body>
+</html>

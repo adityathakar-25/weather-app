@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <title>Weather</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <script src="./js/main.js"></script>
+  </head>
+  <body> 
+    <div class="page-container">
+      <div class="weather-card">
+        <div class="weather-card__overlay">
+          <div class="weather-card__title-container">
+            <p class="weather-card__title-text">Weather</p>
+          </div>
+          <div class="weather-card__search-container">
+            <div class="search-input__icon-box">
+              <div class="search-input__icon"></div>
+            </div>
+            <div>
+              <input type="textbox" id="myTextbox" placeholder="Enter City Name" class="search-input__textbox">
+            </div>
+          </div>
+          <div>
+            <button onclick="getValue()" class="search-button">Search</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
